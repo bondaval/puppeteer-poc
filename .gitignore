@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+.vscode/
+dist
+storybook-static
+# ignore .local files as per https://vitejs.dev/guide/env-and-mode.html#env-files
+*.local
+.idea/
+cypress/videos
+cypress/screenshots
+~/.cache/
+dist-dev
+dist-prod
+stats.html
