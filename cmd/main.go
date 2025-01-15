@@ -1,8 +1,6 @@
 package main
 
 import (
-	"bytes"
-	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -14,13 +12,7 @@ type PdfRequest struct {
 }
 
 func main() {
-	htmlContent := "<html><body><h1>Hello, Puppeteer!</h1></body></html>"
-	requestBody, err := json.Marshal(PdfRequest{HTML: htmlContent})
-	if err != nil {
-		panic(err)
-	}
-
-	resp, err := http.Post("http://localhost:3000/generate-pdf", "application/json", bytes.NewBuffer(requestBody))
+	resp, err := http.Get("http://localhost:3000/generate-pdf/nbi")
 	if err != nil {
 		panic(err)
 	}
